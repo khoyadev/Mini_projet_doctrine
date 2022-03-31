@@ -5,7 +5,7 @@
 
 - Mode de travail Workflow Gitflow <br/>
 - Forker le repository <br/>
-- On doit cloner le projet<br/>
+-cloner le projet <br/>
 - Creer sa propre branche<br/>
 - Faire des push sur sa branche<br/>
 
@@ -17,4 +17,4 @@
 - Faire la commande $ vendor/bin/doctrine orm:schema-tool:create<br/>
 
 
-#Les taches a faire son le Trello<br/>
+#Les taches a faire sont sur le Trello<br/>
