@@ -12,24 +12,11 @@ class ProprietaireController extends Controller
    }
   
    public function ajout(){
-      //extract($_POST);
-   //    $datenaissance = DateTime::createFromFormat("Y-m-d",$_POST['dateNaissance']);
-   //    $datenaissance = $datenaissance->format('Y-m-d');
 
-   //   // $dateFormat = date("Y-m-d",$datenaissanc);
-   //    var_dump($datenaissance);
-   //    dd();
       $proprietaire = new Proprietaire();
       $proprietaire->setNom($_POST['nom']);
       $proprietaire->setPrenom($_POST['prenom']);
       $proprietaire->setCivilite($_POST['civilite']);
-
-      //$datenaissance = strtotime($_POST['dateNaissance']);
-      //$dateFormat = ("Y-m-d",$datenaissance);
-      // $datenaissance = DateTime::createFromFormat("Y-m-d",$_POST['dateNaissance']);
-      // $datenaissance = $datenaissance->format('Y-m-d');
-
-      // $proprietaire->setDateNaissance($datenaissance);
       $proprietaire->setDateNaissance($_POST['dateNaissance']);
       $proprietaire->setLieuNaissance($_POST['lieuNaissance']);
       $proprietaire->setCni($_POST['cni']);
@@ -57,10 +44,39 @@ class ProprietaireController extends Controller
     * http://localhost:8081/projects/lpgl/tpmvc/tpORM/Roles/edit/12
     */
    public function edit($id) {
-
-      echo $id;
+      $trouver = $this->proprietairedao->editBd($id);
+      
+      return $this->view->load("Proprietaire/modification",$trouver);
    }
-  
+
+   public function details($id) {
+      $trouver = $this->proprietairedao->editBd($id);
+      
+      return $this->view->load("Proprietaire/details",$trouver);
+   }
+
+   public function modifier($id) {
+      $data = $this->proprietairedao->editBd($id);
+      $data->setNom($_POST['nom']);
+      $data->setPrenom($_POST['prenom']);
+      $data->setCivilite($_POST['civilite']);
+      $data->setDateNaissance($_POST['dateNaissance']);
+      $data->setLieuNaissance($_POST['lieuNaissance']);
+      $data->setCni($_POST['cni']);
+      $data->setAdresse($_POST['adresse']);
+      $data->setNationalite($_POST['nationalite']);
+      $data->setContact($_POST['contact']);
+      $data->setEmail($_POST['email']);
+      $data->setPassword($_POST['password']);
+      $this->proprietairedao->modifierBd();
+      return $this->list();
+   }
+   
+   public function delete($id) {
+      $this->proprietairedao->deleteBd($id);
+      return $this->list();
+   }
+
 }
 
 

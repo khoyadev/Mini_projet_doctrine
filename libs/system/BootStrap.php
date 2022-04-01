@@ -14,7 +14,7 @@ class BootStrap
                 if(isset($url[2])){
                     $method=$url[1];
                     if(method_exists($controller_object,$method)){
-                        $controller_object->$method( $url[2]);
+                        $controller_object->$method($url[2]);
                     }else {
                         die($method."n'exite pas dans le controlleur".$file);
                     }

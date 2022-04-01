@@ -16,8 +16,21 @@
         
         $this->entityManager->persist($proprietaire);
         $this->entityManager->flush();
-        
-
     }
+    public function editBd($id) {
+
+        return $proprietaireTrouver = $this->entityManager->find("Proprietaire",$id);
+     }
+
+     public function modifierBd(){
+
+        $this->entityManager->flush();
+     }
+
+     public function deleteBd($id){
+        $proprietaireTrouver = $this->entityManager->find("Proprietaire",$id);
+        $this->entityManager->remove($proprietaireTrouver);
+        $this->entityManager->flush();
+     }
  }
  ?>

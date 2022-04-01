@@ -40,7 +40,7 @@
                 <div class="col-md-12">
                     <div class="mt-5 mb-3 clearfix">
                         <h2 class="pull-left">liste des Proprietaires</h2>
-                        <a href="index.php?view=ajout" class="btn btn-success pull-right"><i class="fa fa-plus"></i> Ajouter nouveau proprietaire</a>
+                        <a href="http://localhost/PHP/Mini_projet_doctrine/Proprietaire/formulaire" class="btn btn-success pull-right"><i class="fa fa-plus"></i> Ajouter nouveau proprietaire</a>
                     </div>
                     
 
@@ -65,9 +65,9 @@
                                         echo "<td>" . $proprietaire->getAdresse(). "</td>";
                                         echo "<td>" . $proprietaire->getContact(). "</td>";
                                         echo "<td>";
-                                            echo '<a href="#" class="mr-3" title="View Record" data-toggle="tooltip"><span class="fa fa-eye"></span></a>';
-                                            echo '<a href="#" class="mr-3" title="Modification" data-toggle="tooltip"><span class="fa fa-pencil"></span></a>';
-                                            echo '<a href="#" title="Delete Record" data-toggle="tooltip"><span class="fa fa-trash"></span></a>';
+                                            echo '<a href="http://localhost/PHP/Mini_projet_doctrine/Proprietaire/details/'.$proprietaire->getId_proprietaire().'" class="mr-3" title="View Record" data-toggle="tooltip"><span class="fa fa-eye"></span></a>';
+                                            echo '<a href="http://localhost/PHP/Mini_projet_doctrine/Proprietaire/edit/'.$proprietaire->getId_proprietaire().'" class="mr-3" title="Modification" data-toggle="tooltip"><span class="fa fa-pencil"></span></a>';
+                                            echo '<a href="http://localhost/PHP/Mini_projet_doctrine/Proprietaire/delete/'.$proprietaire->getId_proprietaire().'" title="Delete Record" data-toggle="tooltip"><span class="fa fa-trash"></span></a>';
                                         echo "</td>";
                                     echo "</tr>";
                                 }
