@@ -5,27 +5,52 @@ use src\model\ProprietaireDb;
 
 class ProprietaireController extends Controller
 {
-   //Roles/add
-   // public function add(){
-   //    $roles_dao=new RolesDb();
-   //    $data = $roles_dao->findAll();
-   //    //print_r($data);
-   //    foreach($data as $roles)
-   //    {
-   //       echo $roles->getId() . "   " . $roles->getNom() . "<br/>";
-   //    }
-   //    return $this->view->load("roles/ajout");
-       
-   // }
-   public function add(){
-    return $this->view->load("Proprietaire/ajout");
+   private $proprietairedao;
+   public function __construct() {
+       parent::__construct();
+       $this->proprietairedao = new ProprietaireDb();
+   }
+  
+   public function ajout(){
+      //extract($_POST);
+   //    $datenaissance = DateTime::createFromFormat("Y-m-d",$_POST['dateNaissance']);
+   //    $datenaissance = $datenaissance->format('Y-m-d');
+
+   //   // $dateFormat = date("Y-m-d",$datenaissanc);
+   //    var_dump($datenaissance);
+   //    dd();
+      $proprietaire = new Proprietaire();
+      $proprietaire->setNom($_POST['nom']);
+      $proprietaire->setPrenom($_POST['prenom']);
+      $proprietaire->setCivilite($_POST['civilite']);
+
+      //$datenaissance = strtotime($_POST['dateNaissance']);
+      //$dateFormat = ("Y-m-d",$datenaissance);
+      // $datenaissance = DateTime::createFromFormat("Y-m-d",$_POST['dateNaissance']);
+      // $datenaissance = $datenaissance->format('Y-m-d');
+
+      // $proprietaire->setDateNaissance($datenaissance);
+      $proprietaire->setDateNaissance($_POST['dateNaissance']);
+      $proprietaire->setLieuNaissance($_POST['lieuNaissance']);
+      $proprietaire->setCni($_POST['cni']);
+      $proprietaire->setAdresse($_POST['adresse']);
+      $proprietaire->setNationalite($_POST['nationalite']);
+      $proprietaire->setContact($_POST['contact']);
+      $proprietaire->setEmail($_POST['email']);
+      $proprietaire->setPassword($_POST['password']);
+      
+      $this->proprietairedao->insert($proprietaire);
+      return $this->list();
+    }
+
+    public function formulaire(){
+      return $this->view->load("Proprietaire/ajout");
     }
 
     public function list(){
         
-        $roles_dao = new ProprietaireDb();
-        $listes = $roles_dao->finAll();
-        //$listes = array("awa","emma");
+        $listes = $this->proprietairedao->finAll();
+        
         return $this->view->load("Proprietaire/list",$listes);
         }
    /**
