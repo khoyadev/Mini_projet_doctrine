@@ -5,7 +5,7 @@
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => 'e49079ad1d9c634dcd41acea3c63b9369ac8b2f3',
+        'reference' => 'c47fb8b878696d8ec0a0d952e7b00f70776ed0bf',
         'name' => '__root__',
         'dev' => true,
     ),
@@ -16,7 +16,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => 'e49079ad1d9c634dcd41acea3c63b9369ac8b2f3',
+            'reference' => 'c47fb8b878696d8ec0a0d952e7b00f70776ed0bf',
             'dev_requirement' => false,
         ),
         'doctrine/annotations' => array(
@@ -139,7 +139,7 @@
         'psr/cache-implementation' => array(
             'dev_requirement' => false,
             'provided' => array(
-                0 => '1.0|2.0',
+                0 => '2.0|3.0',
             ),
         ),
         'psr/container' => array(
@@ -169,16 +169,16 @@
         'psr/simple-cache-implementation' => array(
             'dev_requirement' => false,
             'provided' => array(
-                0 => '1.0|2.0',
+                0 => '1.0|2.0|3.0',
             ),
         ),
         'symfony/cache' => array(
-            'pretty_version' => 'v5.4.6',
-            'version' => '5.4.6.0',
+            'pretty_version' => 'v6.0.6',
+            'version' => '6.0.6.0',
             'type' => 'library',
             'install_path' => __DIR__ . '/../symfony/cache',
             'aliases' => array(),
-            'reference' => 'c0718d0e01ac14251a45cc9c8b93716ec41ae64b',
+            'reference' => '57faad4e0d694f9961f517fdd5e6fbb1f6d0e04f',
             'dev_requirement' => false,
         ),
         'symfony/cache-contracts' => array(
@@ -193,7 +193,7 @@
         'symfony/cache-implementation' => array(
             'dev_requirement' => false,
             'provided' => array(
-                0 => '1.0|2.0',
+                0 => '1.1|2.0|3.0',
             ),
         ),
         'symfony/console' => array(
@@ -257,15 +257,6 @@
             'install_path' => __DIR__ . '/../symfony/polyfill-php72',
             'aliases' => array(),
             'reference' => '9a142215a36a3888e30d0a9eeea9766764e96976',
-            'dev_requirement' => false,
-        ),
-        'symfony/polyfill-php73' => array(
-            'pretty_version' => 'v1.25.0',
-            'version' => '1.25.0.0',
-            'type' => 'library',
-            'install_path' => __DIR__ . '/../symfony/polyfill-php73',
-            'aliases' => array(),
-            'reference' => 'cc5db0e22b3cb4111010e48785a97f670b350ca5',
             'dev_requirement' => false,
         ),
         'symfony/polyfill-php80' => array(

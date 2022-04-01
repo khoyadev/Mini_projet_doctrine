@@ -1,7 +1,7 @@
 <?php
 use Doctrine\ORM\Tools\Setup;
 use Doctrine\ORM\EntityManager;
-
+use Doctrine\Common\Cache\ArrayCache;
 
 require_once "vendor/autoload.php";
 
