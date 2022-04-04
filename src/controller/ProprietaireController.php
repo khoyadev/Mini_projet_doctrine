@@ -11,6 +11,15 @@ class ProprietaireController extends Controller
        $this->proprietairedao = new ProprietaireDb();
    }
   
+   /**
+ * http://localhost/PHP/Mini_projet_doctrine/Proprietaire/list
+   */
+   public function list(){
+      
+   $listes = $this->proprietairedao->finAll();
+   
+   return $this->view->load("Proprietaire/list",$listes);
+   }
    public function ajout(){
 
       $proprietaire = new Proprietaire();
@@ -30,18 +39,16 @@ class ProprietaireController extends Controller
       return $this->list();
     }
 
+   /**
+    * http://localhost/PHP/Mini_projet_doctrine/Proprietaire/formulaire
+    */
     public function formulaire(){
       return $this->view->load("Proprietaire/ajout");
     }
 
-    public function list(){
-        
-        $listes = $this->proprietairedao->finAll();
-        
-        return $this->view->load("Proprietaire/list",$listes);
-        }
+
    /**
-    * http://localhost:8081/projects/lpgl/tpmvc/tpORM/Roles/edit/12
+    * http://localhost/PHP/Mini_projet_doctrine/Proprietaire/edit/3
     */
    public function edit($id) {
       $trouver = $this->proprietairedao->editBd($id);

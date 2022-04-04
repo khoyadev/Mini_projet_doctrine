@@ -23,7 +23,7 @@ class BootStrap
                 else if(isset($url[1])){
                     $method=$url[1];
                     if(method_exists($controller_object,$method)){
-                        $controller_object->$method( );
+                        $controller_object->$method();
                     }else {
                         die($method."n'exite pas dans le controlleur".$file);
                     }
@@ -32,10 +32,9 @@ class BootStrap
             }else {
                 die($controller_file."n'existe pas");
             }
-        }else {
+        }elseif(!isset($_GET["url"])) {
       
           echo "MVC";
-           // require_once "src/view/login.php";
             
         }
     }
